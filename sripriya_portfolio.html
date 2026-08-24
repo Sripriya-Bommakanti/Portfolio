@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sripriya Bommakanti | Software Engineer</title>
+<style>
+:root{
+  --bg:#07111f; --bg2:#0b1728; --card:rgba(15,29,48,.78);
+  --text:#eef6ff; --muted:#9eb0c5; --accent:#35d5e8; --accent2:#7c5cff;
+  --border:rgba(255,255,255,.09); --shadow:0 20px 60px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:
+radial-gradient(circle at 80% 10%,rgba(53,213,232,.13),transparent 28%),
+radial-gradient(circle at 15% 35%,rgba(124,92,255,.10),transparent 30%),var(--bg);
+color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,17,31,.78);
+backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{max-width:1120px;margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:800}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:25px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--accent)}
+.hero{min-height:100vh;max-width:1120px;margin:auto;padding:150px 24px 80px;display:grid;
+grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
+.kicker{color:var(--accent);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(48px,7vw,82px);line-height:1.02;margin:15px 0}
+.gradient{background:linear-gradient(100deg,var(--accent),#8be9ff,var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{font-size:27px;color:#d7e3ef;margin-bottom:18px}
+.hero p{max-width:700px;color:var(--muted);font-size:18px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 20px;border-radius:10px;border:1px solid var(--border);font-weight:700}
+.btn.primary{background:var(--accent);color:#041018;border-color:transparent}
+.btn:hover{transform:translateY(-2px);transition:.2s}
+.hero-card{position:relative;background:linear-gradient(145deg,rgba(53,213,232,.10),rgba(124,92,255,.12));
+border:1px solid var(--border);border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+.avatar{width:92px;height:92px;border-radius:24px;display:grid;place-items:center;
+background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:34px;font-weight:900;color:#07111f;margin-bottom:25px}
+.stat{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}
+.stat:last-child{border:0}.stat span:first-child{color:var(--muted)}.stat strong{color:#fff}
+section{max-width:1120px;margin:auto;padding:100px 24px}
+.section-label{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h3.section-title{font-size:42px;margin:8px 0 45px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.card p{color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.skill-card h4{font-size:18px;margin-bottom:16px}.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tag{padding:7px 11px;border-radius:8px;background:#122238;color:#cbd9e7;font-size:13px;border:1px solid rgba(255,255,255,.06)}
+.timeline{border-left:2px solid rgba(53,213,232,.5);padding-left:30px}
+.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;left:-38px;top:8px;width:13px;height:13px;
+border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(53,213,232,.10)}
+.role{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.role h4{font-size:24px}.company{color:var(--accent);font-weight:700}.date{color:var(--muted)}
+ul{margin-top:18px;padding-left:20px;color:var(--muted)}li{margin:9px 0}
+.project{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}
+.project-icon{font-size:45px}.project h4{font-size:28px}.project .subtitle{color:var(--accent);margin:3px 0 15px}
+.edu{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.cgpa{color:var(--accent);font-weight:800;font-size:20px}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cert:before{content:"✓";display:block;color:var(--accent);font-size:25px;margin-bottom:10px}
+.contact{text-align:center;max-width:800px}.contact p{color:var(--muted);font-size:18px}
+.contact-email{display:inline-block;margin-top:25px;font-size:20px;color:var(--accent);font-weight:700}
+footer{text-align:center;padding:35px 20px;color:#6f8195;border-top:1px solid var(--border)}
+.reveal{animation:fadeUp .8s ease both}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(max-width:800px){
+ .navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:130px}
+ .about-grid,.skills,.cert-grid{grid-template-columns:1fr}section{padding:75px 20px}
+ h3.section-title{font-size:34px}.hero-card{margin-top:10px}.role,.edu{grid-template-columns:1fr;display:block}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav">
+    <a class="logo" href="#home">S<span>.</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="reveal">
+    <div class="kicker">Software Engineer • Python • AI & Data</div>
+    <h1>Sripriya<br><span class="gradient">Bommakanti</span></h1>
+    <h2>Software Engineer | Python | FastAPI | Full-Stack Development | Generative AI</h2>
+    <p>Software Engineer with hands-on experience building Python-based enterprise applications, FastAPI services, and full-stack data platforms.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn" href="C:\Users\sripr\Downloads\SRIPRIYA BOMMAKANTI.pdf" target="_blank">View Resume</a>
+      <a class="btn" href="mailto:sripriyabommakanti@gmail.com">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-card reveal">
+    <div class="avatar">SB</div>
+    <div class="stat"><span>Current Role</span><strong>Software Engineer</strong></div>
+    <div class="stat"><span>Organization</span><strong>TCS • PwC Client</strong></div>
+    <div class="stat"><span>Core Stack</span><strong>Python + FastAPI + Generative AI</strong></div>
+    <div class="stat"><span>Focus</span><strong>Backend • AI • Data</strong></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-label">01. About Me</div>
+  <h3 class="section-title">Building software with Python</h3>
+  <div class="about-grid">
+    <div class="card"><p>I am a Software Engineer experienced in Python-based enterprise applications, backend services, API integration and full-stack data platforms.</p></div>
+    <div class="card"><p>My current work involves a visual DAG-based data platform using Python, FastAPI, React.js and Electron. I also have knowledge of Generative AI, LLMs, RAG and vector databases.</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">02. Skills</div>
+  <h3 class="section-title">Technical Expertise</h3>
+  <div class="skills">
+    <div class="card skill-card"><h4>Languages</h4><div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">C</span><span class="tag">SQL</span></div></div>
+    <div class="card skill-card"><h4>Backend & Development</h4><div class="tags"><span class="tag">FastAPI</span><span class="tag">REST APIs</span><span class="tag">Pydantic</span><span class="tag">YAML</span><span class="tag">Async Processing</span></div></div>
+    <div class="card skill-card"><h4>Frontend</h4><div class="tags"><span class="tag">React.js</span><span class="tag">HTML</span><span class="tag">CSS</span></div></div>
+    <div class="card skill-card"><h4>AI & Data</h4><div class="tags"><span class="tag">Generative AI</span><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">FAISS</span><span class="tag">ChromaDB</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Polars</span></div></div>
+    <div class="card skill-card"><h4>Database & Concepts</h4><div class="tags"><span class="tag">MySQL</span><span class="tag">DAG Pipelines</span><span class="tag">Workflow Orchestration</span><span class="tag">Data Processing</span><span class="tag">Automation</span><span class="tag">OOP</span><span class="tag">DSA</span><span class="tag">DBMS</span></div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">03. Experience</div>
+  <h3 class="section-title">Professional Experience</h3>
+  <div class="timeline">
+    <div class="timeline-item card">
+      <div class="role"><div><h4>Software Engineer</h4><div class="company">TCS — PwC Client</div></div><div class="date">Jan 2026 — Present</div></div>
+      <ul>
+        <li>Build a Python-native desktop data platform for visual DAG-based pipeline design and execution.</li>
+        <li>Develop FastAPI services for assets, folders, import/export, node configuration and asynchronous execution.</li>
+        <li>Implement YAML and Pydantic schemas for transformation nodes.</li>
+        <li>Align backend schemas with React.js rendering to improve configuration consistency.</li>
+        <li>Apply schema-first validation and code-generation workflows to streamline new node capabilities.</li>
+        <li>Integrate FastAPI, React.js and Electron across enterprise application workflows.</li>
+        <li>Implement Windows UPN-based owner resolution for accurate asset ownership.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">04. Projects</div>
+  <h3 class="section-title">Featured Project</h3>
+  <div class="card project">
+    <div>
+      <h4>Handroid</h4><div class="subtitle">Gesture-Based File Transfer System</div>
+      <p>A touch-free file-transfer application using real-time hand movement detection to enable computer interaction without conventional input devices.</p>
+      <ul>
+        <li>Developed real-time hand movement detection using OpenCV.</li>
+        <li>Implemented gesture recognition for predefined file-transfer actions.</li>
+        <li>Applied real-time image processing for touch-free computer interaction.</li>
+      </ul>
+      <div class="tags" style="margin-top:20px"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Gesture Recognition</span><span class="tag">Image Processing</span></div>
+    </div>
+    <div class="project-icon">✋</div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-label">05. Education</div>
+  <h3 class="section-title">Education</h3>
+  <div class="card edu">
+    <div><h4 style="font-size:23px">Gokaraju Lailavathi Women's Engineering College</h4><p style="color:var(--muted)">Bachelor of Engineering, Computer Science • 2021 — 2025</p></div>
+    <div class="cgpa">8.7 CGPA</div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="section-label">06. Certifications</div>
+  <h3 class="section-title">Certifications</h3>
+  <div class="cert-grid">
+    <div class="card cert"><p>Data Structures and Algorithms Using Java</p></div>
+    <div class="card cert"><p>HackerRank Java Certificate</p></div>
+    <div class="card cert"><p>Joy of Computing Using Python — NPTEL</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-label">07. What's Next?</div>
+  <h3 class="section-title">Let's Connect</h3>
+  <p>I'm interested in software engineering, backend development, full-stack applications and AI-driven technologies.</p>
+  <a class="contact-email" href="mailto:sripriyabommakanti@gmail.com">sripriyabommakanti@gmail.com</a>
+  <div class="buttons" style="justify-content:center">
+    <a class="btn primary" href="mailto:sripriyabommakanti@gmail.com">Say Hello</a>
+  </div>
+</section>
+
+<footer>© 2026 Sripriya Bommakanti </footer>
+</body>
+</html>
